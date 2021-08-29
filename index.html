@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="img-main">
+        <img id="imagenestilo" name="mainimg" src="https://i.pinimg.com/originals/24/58/5f/24585fc9b7433a224a6ff5506e346969.png">
+        <video id="videoestilo" name="changevideo" src="videoplayback.mp4" controls></video>
+    </div>
+    <div class="img-change">
+        <a  onclick="changeimg('img1.jpg')" ><img src="img1.jpg" ></a>
+        <a  onclick="changeimg('img2.jpg')" ><img src="img2.jpg"></a>
+        <a  onclick="changeimg('img3.jpg')" ><img src="img3.jpg"></a>
+        <a  onclick="changevideo()"><div><video src="videoplayback.mp4"></video></div></a>
+    </div>
+    <script>
+        var e1 = document.getElementById('videoestilo');
+    
+        function changeimg(imgB){
+           document.mainimg.src= imgB;  
+           e1.style.zIndex= -1;
+        };
+        function changevideo(){    
+            e1.style.zIndex= 0;
+        };
+    </script>
+    <style>
+        div a img{
+            width: 200px;
+            height: 200px;
+        }
+        div a div{
+            width: 200px;
+            height: 200px;
+            background-image: url(https://image.shutterstock.com/image-vector/line-play-button-icon-illustration-260nw-1044448477.jpg);
+            opacity: 0.8;
+            display: inline-block;
+        }
+        div a video{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            z-index: 4;
+            opacity: 0.8;
+        }
+        .img-main{
+            width: 500px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .img-change{
+            display: block;
+        }
+    
+        .img-main img{
+            width: 500px;
+            height: 400px;
+            object-fit: cover;
+        }
+        .img-main video{
+            position: absolute;
+            width: 500px;
+            height: 400px;
+            object-fit: cover;
+        
+        }
+
+    </style>
+</body>
+</html>
